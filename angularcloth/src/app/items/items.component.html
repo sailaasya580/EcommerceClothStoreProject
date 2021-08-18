@@ -1,0 +1,22 @@
+<h2 class="container bg-white justify"><strong>All Clothing Items</strong></h2>
+<br>
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 mb-4" *ngFor="let c of cloths">
+              <div class="card">
+                  <img class="card-img-top" src={{c.cImage}} alt="clothimage">
+
+        <div class="card-body">
+          <h5 class="card-title">{{c.cName}}</h5>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cost: {{c.cPrice | currency:'INR'}}</li>
+          <li class="list-group-item">Size: {{c.cSize}}</li>
+          </ul>
+          <a routerLink="{{c.cid}}">View details</a> &nbsp;
+          <button class="bg-success">Order Now..!</button>  &nbsp;
+          <button class="bg-voilet">Add To Favourties</button>
+        </div>
+      </div>
+          </div>
+          </div>
+</div>

@@ -1,0 +1,11 @@
+<h2>Employee Update</h2>
+<form [formGroup]="emprform" (ngSubmit)="onSubmit(emprform.value)">
+    <input type="number" placeholder="eid" name="eid" formControlName="eid" required>
+    <span style="color: red;" *ngIf="emprform.controls.eid.errors"> Enter ID</span>
+    <br>
+    <input type="text" placeholder="name" name="eName" formControlName="eName">
+    <span style="color: red;" *ngIf="emprform.controls.eName.errors"> Enter Name</span>
+    <br>
+    <input type="number" placeholder="salary" name="eSal" formControlName="eSal"><br>
+    <input type="submit" [disabled]="emprform.invalid">
+</form>

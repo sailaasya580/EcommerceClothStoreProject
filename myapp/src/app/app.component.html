@@ -1,0 +1,48 @@
+<h1>Hello from {{name}}</h1>
+<app-callapi></app-callapi>
+<app-nested></app-nested>
+{{games}}
+<ul>
+    <li *ngFor= "let g of games">
+     {{g}} 
+    </li>
+  </ul>
+
+<h1>Hello from {{name}}</h1>
+<app-nested></app-nested>
+{{games}}
+<ul>
+  <li *ngFor= "let g of games">
+   {{g}} 
+  </li>
+</ul>
+  {{emp.eid + ' ' + emp.ename}}
+<br>
+{{emp.eid}} {{emp.ename}}
+{{emp | json}}
+<br>
+<table border="1">
+    <tr *ngFor="let e of emps">
+      <td>{{e.eid}}</td>
+      <td>{{e.ename | uppercase}}</td>
+      <td>{{e.ename | lowercase}}</td>
+      <td>{{e.ename | slice:2}}</td>
+      <td>{{e.ename | slice:2:5}}</td>
+      <td>{{e.sal}}
+        <span *ngIf="e.sal>70000">*</span>
+      </td>
+      <td>{{e.sal | tax }}</td>
+      <td>{{e.sal | number}}</td>
+      <td>{{e.sal | currency}}</td>
+      <td>{{e.sal | currency:'EUR'}}</td>
+      <td>{{e.sal | tax |currency:'INR'}}</td>
+      <td>{{e.gender | gender}}</td>
+      <td>{{e.retired}}</td>
+      <td>{{e.doj}}</td>
+      <td>{{e.doj | date}}</td>
+      <td>{{e.doj | date:'d/M/y'}}</td>
+      <td>
+           <img *ngIf="e.retired" src="https://whywebecamehuman.com/wp-content/uploads/2020/11/laughing8.gif"height="95" width="95">
+           <img *ngIf="!e.retired" src="https://www.whoa.in/download/smiley-emoji-animated-gif-with-sad-and-crying-face-emotional--3-emoji-gif"height="95" width="95">
+       </td>
+    </tr>

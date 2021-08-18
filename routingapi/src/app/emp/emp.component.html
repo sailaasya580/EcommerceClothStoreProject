@@ -1,0 +1,29 @@
+<h2>Employees</h2>
+<h3>Hello {{name}}</h3>
+<form #empform="ngForm" (ngSubmit)="onSubmit(empform.value)">
+  <input type="number" placeholder="eid" name="eid" ngModel required><br>
+  <input type="text" placeholder="name" name="eName" [(ngModel)]="name"><br>
+  <input type="number" placeholder="salary" name="eSal" ngModel><br>
+  <input type="submit" [disabled]="empform.invalid">
+</form>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of emps">
+      <td>{{e.eid}}</td>
+      <td><a routerLink="{{e.eid}}">{{e.eName}}</a></td>
+      <td>{{e.eSal | currency:'INR'}}</td>
+      <td><a routerLink="/empupdate/{{e.eid}}">Update</a> |
+        <a routerLink="/empdelete/{{e.eid}}">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

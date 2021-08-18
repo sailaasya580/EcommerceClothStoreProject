@@ -1,0 +1,17 @@
+
+<h2>Update This Cloth Item Details</h2>
+<form [formGroup]="clothrform" (ngSubmit)="onSubmit(clothrform.value)">
+    <Strong>Image</Strong><input type="string" placeholder="give image link" name="cImage" formControlName="cImage"  ><br>
+    <span style="color: red;" *ngIf="clothrform.controls.cImage.errors">Pleasefill this feild</span>
+    <br>
+    <Strong>Name</Strong><input type="string" placeholder="Enter cloth name" name="cName" formControlName="cName" ><br>
+    <span style="color: red;" *ngIf="clothrform.controls.cName.errors">Pleasefill this feild</span>
+    <br>
+    <Strong>Price</Strong><input type="number" placeholder="Enter Cost" name="cPrice" formControlName="cPrice"  ><br>
+    <span style="color: red;" *ngIf="clothrform.controls.cPrice.errors">Pleasefill this feild</span>
+    <br>
+    <Strong>Size</Strong><input type="string" placeholder="Enter size" name="cSize" formControlName="cSize" ><br>
+    <span style="color: red;" *ngIf="clothrform.controls.cSize.errors">Pleasefill this feild</span>
+    <br>
+    <input type="submit" [disabled]="clothrform.invalid">
+  </form>
